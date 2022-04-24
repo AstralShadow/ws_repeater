@@ -22,11 +22,11 @@ void Server::on_close(conn_hdl hdl)
 
 void Server::on_message(conn_hdl hdl, msg_ptr msg)
 {
-    auto self = hdl.lock();
+    //auto self = hdl.lock();
     for(auto it : details->clients)
     {
-        auto other = it.lock();
-        if(self != other)
+        //auto other = it.lock();
+        //if(self != other)
             endpoint.send(it, msg);
     }
 }

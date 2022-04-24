@@ -11,8 +11,9 @@ int main(int, char**)
 {
     signal(SIGINT, &on_signal);
 
-    cout << "Listening on 9002" << endl;
-    server.run(9002);
+    uint16_t port = 9091;
+    cout << "Listening on " << port << endl;
+    server.run(port);
     cout << "Exiting" << endl;
 
     return 0;
